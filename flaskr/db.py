@@ -18,11 +18,15 @@ def init_db():
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf-8'))
     
-
+@click.command('init-db')
+@with_appcontext
+def init_db_command():
+    init_db()
+    click.echo('Intialized Database')
 
 def init_app(app):
-    init_db()
-    
+    app.teardown_appcontext(close_db)
+    app.cli.add_command(init_db_command)
 
 
 def close_db(e=None):
