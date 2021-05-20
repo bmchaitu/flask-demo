@@ -18,10 +18,11 @@ def init_db():
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf-8'))
     
-init_db()
+
 
 @with_appcontext
 def init_app(app):
+    init_db()
     app.teardown_appcontext(close_db)
 
 
