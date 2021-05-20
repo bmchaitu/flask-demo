@@ -23,6 +23,7 @@ click==7.1.1
 colorama==0.3.7
 command-not-found==0.3
 contextvars==2.4
+crcmod==1.7
 cryptography==2.1.4
 cupshelpers==1.0
 dataclasses==0.8
@@ -172,4 +173,3 @@ wrapt==1.12.1
 xkit==0.0.0
 zipp==3.4.1
 zope.interface==4.3.2
-gunicorn== 19.9.0
