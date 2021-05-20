@@ -20,10 +20,9 @@ def init_db():
     
 
 
-@with_appcontext
 def init_app(app):
     init_db()
-    app.teardown_appcontext(close_db)
+    
 
 
 def close_db(e=None):
